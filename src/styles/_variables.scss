@@ -1,0 +1,22 @@
+@use 'helpers' as *;
+
+:root {
+	/* Глобальные переменные: цвета и т.д. */
+
+	--text-color-base: #000;
+	--color-accent: rgb(0, 174, 255);
+
+	--font-family-base: 'Montserrat', sans-serif;
+
+	--container-width: #{rem(1600)};
+	--container-padding-x: #{rem(15)};
+
+	--transition-duration: 0.2s;
+
+	/* Переменная --scrollbar-width прописана в файле js */
+	--100vw: calc(100vw - var(--scrollbar-width));
+
+	@include laptop {
+		--container-width: #{rem(1280)};
+	}
+}
