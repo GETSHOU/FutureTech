@@ -5,10 +5,9 @@ export default {
 	rules: {
 		'block-no-empty': true,
 		'no-empty-source': null,
-		'color-hex-length': 'short',
-		'max-nesting-depth': 2,
+		'color-hex-length': 'long',
+		'max-nesting-depth': 3,
 		'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
-
 		'property-no-deprecated': [true, { ignoreProperties: ['clip', '/^grid-/'] }],
 		'selector-class-pattern':
 			'^[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$',

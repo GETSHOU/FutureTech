@@ -1,0 +1,108 @@
+@use '../helpers/' as *;
+
+.header {
+	display: flex;
+	flex-direction: column;
+
+	&__promo {
+		padding-block: rem(20);
+		border-bottom: 1px solid var(--color-dark-15);
+
+		@include laptop {
+			padding-block: rem(12);
+		}
+
+		@include mobile-s {
+			padding-block: rem(10);
+		}
+
+		&-inner {
+			text-align: center;
+		}
+
+		&-link {
+			@include laptop {
+				font-size: rem(14);
+			}
+		}
+	}
+
+	&__main {
+		padding-block: rem(24);
+		background-color: var(--color-dark-10);
+
+		@include laptop {
+			padding-block: rem(20);
+		}
+
+		&-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: 1rem;
+		}
+	}
+
+	&__overlay {
+		@include mobile-above {
+			display: contents;
+		}
+
+		@include mobile {
+			position: fixed;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			row-gap: 3rem;
+			background-color: var(--color-dark-10);
+
+			&:not(.is-active) {
+				@include hide;
+
+				translate: 100%;
+			}
+		}
+	}
+
+	&__menu {
+		@include mobile {
+			overflow-y: auto;
+		}
+
+		&-list {
+			display: flex;
+			align-items: center;
+			column-gap: rem(16);
+
+			@include laptop {
+				column-gap: rem(6);
+			}
+
+			@include mobile {
+				flex-direction: column;
+				row-gap: 1rem;
+			}
+		}
+
+		&-link {
+			padding: rem(14) rem(24);
+
+			@include laptop {
+				padding: rem(10) rem(18);
+				font-size: rem(14);
+			}
+
+			&.is-active {
+				font-weight: 500;
+				color: var(--color-absolute-white);
+				background-color: var(--color-dark-8);
+				border: var(--border);
+				border-radius: rem(10);
+				cursor: default;
+				pointer-events: none;
+			}
+		}
+	}
+}

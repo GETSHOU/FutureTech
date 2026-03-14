@@ -3,17 +3,32 @@
 :root {
 	/* Глобальные переменные: цвета и т.д. */
 
-	--text-color-base: #000;
-	--color-accent: rgb(0, 174, 255);
+	--color-absolute-white: #ffffff;
 
-	--font-family-base: 'Montserrat', sans-serif;
+	--color-accent: #ffd11a;
+
+	--color-dark-8: #141414;
+	--color-dark-10: #1a1a1a;
+	--color-dark-15: #262626;
+	--color-dark-20: #333333;
+	--color-dark-40: #666666;
+
+	--color-gray-50: #7e7e81;
+	--color-gray-60: #98989a;
+
+	--color-red: #ff5500;
+
+	--font-family-base: 'Inter', sans-serif;
+	--font-family-accent: 'Kumbh Sans', sans-serif;
 
 	--container-width: #{rem(1600)};
 	--container-padding-x: #{rem(15)};
 
 	--transition-duration: 0.2s;
 
-	/* Переменная --scrollbar-width прописана в файле js */
+	--border: #{rem(1)} solid var(--color-dark-20);
+
+	/* Переменная --scrollbar-width прописана в файле defineScrollBarWidthCSSVar.js */
 	--100vw: calc(100vw - var(--scrollbar-width));
 
 	@include laptop {

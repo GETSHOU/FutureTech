@@ -1,0 +1,87 @@
+@use '../helpers/' as *;
+
+.burger-button {
+	--move-delay: 0.15s;
+	--move-duration: 0.1s;
+	--padding-inline: #{rem(4.25)};
+	--transition-duration: 0.2s;
+
+	position: relative;
+	display: inline-flex;
+	color: var(--color-absolute-white);
+	padding: rem(8.5) var(--padding-inline);
+	background-color: transparent;
+	cursor: pointer;
+	overflow: hidden;
+
+	@include square(rem(34));
+
+	@include hover {
+		color: var(--color-accent);
+	}
+
+	&__line {
+		position: absolute;
+		width: calc(100% - var(--padding-inline) * 2);
+		height: rem(2);
+		border-radius: 1rem;
+		background-color: currentColor;
+		transition-duration: var(--transition-duration);
+
+		&:first-child {
+			top: rem(8.5);
+		}
+
+		&:nth-child(2) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:last-child {
+			width: calc((100% - var(--padding-inline) * 2) * 0.55);
+			bottom: rem(8.5);
+			right: var(--padding-inline);
+		}
+	}
+
+	&.is-active * {
+		&:first-child {
+			animation:
+				line-1-move var(--move-duration) ease-in forwards,
+				line-1-rotate var(--move-duration) ease-in var(--move-delay) forwards;
+		}
+
+		&:nth-child(2) {
+			animation: line-2-rotate var(--move-duration) ease-in var(--move-delay) forwards;
+		}
+
+		&:last-child {
+			animation: line-3-move var(--move-duration) ease-in forwards;
+		}
+	}
+}
+
+@keyframes line-1-move {
+	100% {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@keyframes line-1-rotate {
+	100% {
+		transform: translateY(-50%) rotate(45deg);
+	}
+}
+
+@keyframes line-2-rotate {
+	100% {
+		transform: translateY(-50%) rotate(-45deg);
+	}
+}
+
+@keyframes line-3-move {
+	100% {
+		transform: translate(calc(100% + var(--padding-inline) + rem(1)));
+	}
+}

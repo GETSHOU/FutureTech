@@ -1,0 +1,39 @@
+@use '../helpers/' as *;
+
+.btn {
+	--btn-width: #{rem(137)};
+
+	display: inline-flex;
+	justify-content: center;
+	white-space: nowrap;
+	max-width: var(--btn-width);
+	width: 100%;
+	padding: rem(14) rem(24);
+	border: var(--border);
+	border-radius: rem(10);
+	background-color: var(--color-dark-8);
+	font-weight: 500;
+	font-size: rem(18);
+
+	@include hover {
+		color: var(--color-accent);
+		border-color: var(--color-accent);
+		background-color: var(--color-dark-10);
+	}
+
+	@include laptop {
+		--btn-width: #{rem(103)};
+
+		padding: rem(10) rem(14);
+		font-size: rem(14);
+	}
+
+	&--accent {
+		color: var(--color-dark-8);
+		background-color: var(--color-accent);
+	}
+
+	&--dark-gray {
+		background-color: var(--color-dark-15);
+	}
+}

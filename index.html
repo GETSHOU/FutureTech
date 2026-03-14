@@ -8,9 +8,58 @@
 		/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="icon" type="image/svg+xml" href="/logo-favicon.svg" />
-		<title>FutureTech | Main page</title>
+		<title>FutureTech | Home</title>
 	</head>
 	<body>
+		<header class="header" data-js-header>
+			<div class="header__promo">
+				<div class="header__promo-inner container">
+					<a class="header__promo-link" href="/">
+						<span class="icon-text icon-text--arrow-yellow">
+							Subscribe to our Newsletter For New & latest Blogs and Resources
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="header__main">
+				<div class="header__main-inner container">
+					<a href="/" class="header__logo logo" title="Home">
+						<img src="/src/images/logo.svg" alt="logotype" class="logo__img" />
+					</a>
+					<div class="header__overlay" data-js-header-overlay>
+						<nav class="header__menu">
+							<ul class="header__menu-list">
+								<li class="header__menu-item">
+									<a class="header__menu-link header__menu-link is-active" href="/"
+										>Home</a
+									>
+								</li>
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="/">News</a>
+								</li>
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="/">Podcasts</a>
+								</li>
+								<li class="header__menu-item">
+									<a class="header__menu-link" href="/">Resources</a>
+								</li>
+							</ul>
+						</nav>
+						<a class="header__contact-us-link btn btn--accent" href="/">Contact Us</a>
+					</div>
+					<button
+						class="burger-button visible-mobile"
+						type="button"
+						title="Open menu"
+						data-js-header-burger-button
+					>
+						<span class="burger-button__line"></span>
+						<span class="burger-button__line"></span>
+						<span class="burger-button__line"></span>
+					</button>
+				</div>
+			</div>
+		</header>
 		<script type="module" src="/src/js/main.js" defer></script>
 	</body>
 </html>
