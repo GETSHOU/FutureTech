@@ -1,34 +1,35 @@
 class BurgerMenu {
-	#dataAttributes = {
-		root: '[data-js-header]',
-		overlay: '[data-js-header-overlay]',
-		burgerButton: '[data-js-header-burger-button]',
+	static CONFIG = {
+		selectors: {
+			root: '[data-js-header]',
+			overlay: '[data-js-header-overlay]',
+			burgerButton: '[data-js-header-burger-menu-button]',
+		},
+		stateClasses: {
+			isActive: 'is-active',
+		},
 	};
-
-	#stateClasses = {
-		isActive: 'is-active',
-		isLock: 'is-lock',
-	};
-
-	#rootElement;
-	#overlayElement;
-	#burgerButtonElement;
-	#boundHandleBurgerButtonClick;
 
 	constructor() {
-		this.#rootElement = document.querySelector(this.#dataAttributes.root);
-		this.#overlayElement = this.#rootElement.querySelector(this.#dataAttributes.overlay);
-		this.#burgerButtonElement = this.#rootElement.querySelector(
-			this.#dataAttributes.burgerButton,
+		this.rootElement = document.querySelector(BurgerMenu.CONFIG.selectors.root);
+
+		if (!this.rootElement) {
+			throw new Error('Root element не найден!');
+		}
+
+		this.overlayElement = this.rootElement.querySelector(
+			BurgerMenu.CONFIG.selectors.overlay,
 		);
-		this.#boundHandleBurgerButtonClick = this.onBurgerButtonClick.bind(this);
+		this.burgerButtonElement = this.rootElement.querySelector(
+			BurgerMenu.CONFIG.selectors.burgerButton,
+		);
+		this.boundHandleBurgerButtonClick = this.onBurgerButtonClick.bind(this);
 		this.bindEvents();
 	}
 
 	toggleBurgerMenu() {
-		this.#overlayElement.classList.toggle(this.#stateClasses.isActive);
-		this.#burgerButtonElement.classList.toggle(this.#stateClasses.isActive);
-		document.documentElement.classList.toggle(this.#stateClasses.isLock);
+		this.overlayElement.classList.toggle(BurgerMenu.CONFIG.stateClasses.isActive);
+		this.burgerButtonElement.classList.toggle(BurgerMenu.CONFIG.stateClasses.isActive);
 	}
 
 	onBurgerButtonClick() {
@@ -36,10 +37,7 @@ class BurgerMenu {
 	}
 
 	bindEvents() {
-		this.#burgerButtonElement.addEventListener(
-			'click',
-			this.#boundHandleBurgerButtonClick,
-		);
+		this.burgerButtonElement.addEventListener('click', this.boundHandleBurgerButtonClick);
 	}
 }
 
