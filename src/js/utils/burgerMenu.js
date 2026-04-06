@@ -1,3 +1,4 @@
+// TODO: Убрать static
 class BurgerMenu {
 	static CONFIG = {
 		selectors: {
