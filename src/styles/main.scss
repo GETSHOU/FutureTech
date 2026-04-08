@@ -4,7 +4,13 @@
 @use 'utils';
 @use 'globals';
 @use 'components/header';
-@use 'components/icon';
+@use 'components/icon-text';
 @use 'components/logo';
 @use 'components/button';
 @use 'components/burger-menu-button';
+@use 'components/hero';
+@use 'components/metrics';
+@use 'components/resources-preview';
+@use 'components/team';
+@use 'components/advantage-card';
+@use 'components/circle-icon';

@@ -1,6 +1,7 @@
 @use 'helpers' as *;
 
 .container {
+	width: 100%;
 	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
@@ -19,5 +20,82 @@
 .visible-mobile {
 	@include mobile-above {
 		display: none !important;
+	}
+}
+
+.full-vw-line {
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		height: rem(1);
+
+		// TODO: Баг. Неправильная формула.
+		width: calc((var(--100vw) - var(--container-width)) / 2);
+		background-color: var(--color-dark-15);
+	}
+
+	&--top {
+		&::before {
+			bottom: 100%;
+		}
+
+		&::after {
+			content: none;
+		}
+	}
+
+	&--bottom {
+		&::before {
+			content: none;
+		}
+
+		&::after {
+			top: 100%;
+		}
+	}
+
+	&--left {
+		&::before,
+		&::after {
+			right: 100%;
+		}
+	}
+
+	&--right {
+		&::before,
+		&::after {
+			left: 100%;
+		}
+	}
+
+	@include tablet {
+		&--tablet-top {
+			&::before,
+			&::after {
+				content: '';
+				width: var(--container-padding-x);
+				bottom: 100%;
+			}
+
+			&::before {
+				right: 100%;
+			}
+
+			&::after {
+				left: 100%;
+			}
+		}
+	}
+
+	@include tablet-above {
+		&--hide-tablet-above {
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
 	}
 }

@@ -1,0 +1,54 @@
+@use '../helpers/' as *;
+
+.resources-preview {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: start;
+	row-gap: rem(30);
+	padding-left: rem(80);
+	padding-bottom: rem(80);
+
+	@include tablet-above {
+		border-left: var(--border);
+	}
+
+	@include laptop {
+		row-gap: rem(20);
+		padding-left: rem(50);
+		padding-bottom: rem(50);
+	}
+
+	@include tablet {
+		padding: rem(100) rem(40) rem(40);
+		border-top: var(--border);
+	}
+
+	&__team {
+		padding: rem(9);
+		border: var(--border);
+		border-radius: rem(100);
+		background-color: var(--color-dark-10);
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: rem(14);
+
+		@include laptop {
+			margin-bottom: rem(6);
+		}
+
+		@include tablet {
+			margin-bottom: rem(4);
+		}
+	}
+
+	&__subtitle {
+		@include fluid-text(18, 14);
+	}
+}

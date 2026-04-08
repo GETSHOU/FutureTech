@@ -1,19 +1,17 @@
 @use '../helpers/' as *;
 
 .btn {
-	--btn-width: #{rem(137)};
+	--btn-min-width: #{rem(137)};
 
 	display: inline-flex;
 	justify-content: center;
-	white-space: nowrap;
-	max-width: var(--btn-width);
-	width: 100%;
+	min-width: var(--btn-min-width);
 	padding: rem(14) rem(24);
+	font-size: rem(18);
+	white-space: nowrap;
 	border: var(--border);
 	border-radius: rem(10);
 	background-color: var(--color-dark-8);
-	font-weight: 500;
-	font-size: rem(18);
 
 	@include hover {
 		color: var(--color-accent);
@@ -22,18 +20,19 @@
 	}
 
 	@include laptop {
-		--btn-width: #{rem(103)};
+		--btn-min-width: #{rem(103)};
 
 		padding: rem(10) rem(14);
 		font-size: rem(14);
 	}
 
 	&--accent {
+		font-weight: 500;
 		color: var(--color-dark-8);
 		background-color: var(--color-accent);
 	}
 
 	&--dark-gray {
-		background-color: var(--color-dark-15);
+		background-color: var(--color-dark-10);
 	}
 }

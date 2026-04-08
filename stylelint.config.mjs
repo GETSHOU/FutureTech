@@ -6,7 +6,7 @@ export default {
 		'block-no-empty': true,
 		'no-empty-source': null,
 		'color-hex-length': 'long',
-		'max-nesting-depth': 3,
+		'max-nesting-depth': 4,
 		'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
 		'property-no-deprecated': [true, { ignoreProperties: ['clip', '/^grid-/'] }],
 		'selector-class-pattern':

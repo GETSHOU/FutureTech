@@ -1,0 +1,33 @@
+@use '../helpers/' as *;
+
+.circle-icon {
+	--circleSize: #{rem(52)};
+	--circleMarginLeft: #{rem(20)};
+
+	position: relative;
+	padding-right: calc(var(--circleSize) + var(--circleMarginLeft));
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		border-radius: 50%;
+		background: url('../../icons/arrows/icon__arrow-top-right.svg') no-repeat center
+			var(--color-accent);
+		background-size: rem(24);
+
+		@include abs-y;
+		@include square(var(--circleSize));
+
+		@include laptop {
+			--circleSize: #{rem(44)};
+			--circleMarginLeft: #{rem(14)};
+
+			background-size: rem(20);
+		}
+
+		@include tablet {
+			--circleSize: #{rem(40)};
+		}
+	}
+}
