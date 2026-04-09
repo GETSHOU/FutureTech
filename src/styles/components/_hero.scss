@@ -55,7 +55,6 @@
 
 	&__title {
 		margin-bottom: rem(20);
-		font-family: var(--font-family-accent);
 
 		@include laptop {
 			margin-bottom: rem(14);
@@ -108,7 +107,9 @@
 			@include tablet {
 				--padding-y: #{rem(30)};
 
-				border-bottom: var(--border);
+				&:not(:last-child) {
+					border-bottom: var(--border);
+				}
 			}
 
 			@include tablet-above {

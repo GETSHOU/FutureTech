@@ -7,7 +7,7 @@
 
 	&__promo {
 		padding-block: rem(20);
-		border-bottom: 1px solid var(--color-dark-15);
+		border-bottom: rem(1) solid var(--color-dark-15);
 
 		@include laptop {
 			padding-block: rem(12);
