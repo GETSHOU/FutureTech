@@ -1,0 +1,35 @@
+@use '../helpers/' as *;
+
+.person-card {
+	--imageSize: #{rem(80)};
+
+	display: flex;
+	align-items: center;
+	column-gap: fluid(16, 8);
+
+	&__image {
+		width: var(--imageSize);
+
+		@include laptop {
+			--imageSize: #{rem(60)};
+		}
+	}
+
+	&__name {
+		color: var(--color-absolute-white);
+		font-weight: 600;
+		font-size: rem(20);
+
+		@include laptop-above {
+			margin-bottom: rem(2);
+		}
+
+		@include laptop {
+			font-size: rem(18);
+		}
+	}
+
+	&__departament {
+		@include fluid-text(18, 14);
+	}
+}

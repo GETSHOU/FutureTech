@@ -3,6 +3,23 @@
 .section {
 	&__header {
 		padding-block: fluid(120, 40);
+		background-color: var(--color-dark-10);
+
+		&-inner {
+			&:has(.section__header-actions) {
+				display: grid;
+				align-items: center;
+				column-gap: 1rem;
+
+				@include mobile-above {
+					grid-template-columns: 1fr auto;
+				}
+
+				@include mobile {
+					row-gap: rem(30);
+				}
+			}
+		}
 
 		&-info {
 			display: flex;
@@ -12,6 +29,21 @@
 
 			@include laptop {
 				row-gap: rem(10);
+			}
+		}
+
+		&-actions {
+			display: flex;
+			width: 100%;
+
+			@include mobile {
+				justify-content: center;
+			}
+		}
+
+		&-link {
+			@include mobile-s {
+				width: 100%;
 			}
 		}
 	}

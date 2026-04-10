@@ -108,7 +108,7 @@ h1,
 	line-height: 1.2;
 
 	@include laptop {
-		@include fluid-text(55, 30); // 70, 55, 30
+		@include fluid-text(55, 30); // laptop - 55, tablet - 30
 	}
 }
 
