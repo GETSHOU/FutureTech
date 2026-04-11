@@ -44,6 +44,10 @@
 
 		&-extra {
 			align-self: start;
+
+			@include mobile-s {
+				align-self: initial;
+			}
 		}
 
 		&-icon {
@@ -80,14 +84,14 @@
 
 	&__grid {
 		display: grid;
-		gap: fluid(30, 10);
-
-		@include mobile {
-			grid-template-columns: 1fr;
-		}
 
 		&--cols-2 {
 			grid-template-columns: repeat(2, 1fr);
+			gap: fluid(30, 10);
+
+			@include mobile {
+				grid-template-columns: 1fr;
+			}
 		}
 
 		&--cols-2-alt {

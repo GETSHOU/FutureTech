@@ -6,7 +6,7 @@ export default {
 		'block-no-empty': true,
 		'no-empty-source': null,
 		'color-hex-length': 'long',
-		'max-nesting-depth': 4,
+		'max-nesting-depth': 5,
 		'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
 		'property-no-deprecated': [true, { ignoreProperties: ['clip', '/^grid-/'] }],
 		'selector-class-pattern':
@@ -14,7 +14,7 @@ export default {
 		'custom-property-pattern': null,
 		'color-function-notation': 'legacy',
 		'font-family-name-quotes': 'always-unless-keyword',
-		'selector-max-specificity': '0,3,0',
+		'selector-max-specificity': '0,5,0',
 		'selector-no-vendor-prefix': true,
 		'keyframe-selector-notation': 'percentage',
 		'selector-no-qualifying-type': [true, { ignore: ['class', 'attribute'] }],
