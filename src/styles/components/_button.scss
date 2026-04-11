@@ -1,11 +1,11 @@
 @use '../helpers/' as *;
 
-.btn {
-	--btn-min-width: #{rem(137)};
+.button {
+	--button-min-width: #{rem(137)};
 
 	display: inline-flex;
 	justify-content: center;
-	min-width: var(--btn-min-width);
+	min-width: var(--button-min-width);
 	padding: rem(14) rem(24);
 	font-size: rem(18);
 	white-space: nowrap;
@@ -20,7 +20,7 @@
 	}
 
 	@include laptop {
-		--btn-min-width: #{rem(103)};
+		--button-min-width: #{rem(103)};
 
 		padding: rem(10) rem(14);
 		font-size: rem(14);

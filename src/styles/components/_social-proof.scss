@@ -1,0 +1,35 @@
+@use '../helpers/' as *;
+
+.social-proof {
+	display: flex;
+	align-items: center;
+	column-gap: rem(50);
+
+	@include laptop {
+		column-gap: rem(30);
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+	}
+
+	&__stats {
+		margin-bottom: rem(6);
+
+		@include laptop {
+			margin-bottom: rem(4);
+		}
+	}
+
+	&__team {
+		padding: rem(10);
+		border-radius: rem(12);
+		background-color: var(--color-dark-8);
+
+		@include laptop {
+			padding: rem(8);
+		}
+	}
+}
