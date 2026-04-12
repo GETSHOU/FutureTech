@@ -1,0 +1,9 @@
+@use '../helpers/' as *;
+
+.about-card {
+	&__link {
+		display: inline-flex;
+		flex-direction: column;
+		row-gap: fluid(20, 10);
+	}
+}

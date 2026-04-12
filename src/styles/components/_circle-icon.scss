@@ -16,7 +16,7 @@
 			var(--color-accent);
 		background-size: rem(24);
 
-		// @include abs-y;
+		@include abs-y;
 		@include square(var(--circleSize));
 
 		@include laptop {

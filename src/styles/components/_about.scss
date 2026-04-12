@@ -1,0 +1,101 @@
+@use '../helpers/' as *;
+
+.about {
+	padding-block: fluid(120, 40);
+	border-bottom: var(--border);
+	background-color: var(--color-dark-10);
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(100);
+
+		@include laptop {
+			row-gap: fluid(50, 40);
+		}
+	}
+
+	&__header {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-areas:
+			'logo info'
+			'logo description';
+		align-items: center;
+		gap: rem(30) fluid(80, 20);
+
+		@include laptop {
+			row-gap: rem(20);
+		}
+
+		@include mobile {
+			grid-template-areas:
+				'logo subtitle'
+				'title title'
+				'description description';
+			gap: rem(4) rem(20);
+		}
+	}
+
+	&__logo {
+		grid-area: logo;
+		width: fluid(150, 60);
+	}
+
+	&__info {
+		grid-area: info;
+		display: grid;
+		row-gap: rem(16);
+
+		@include laptop {
+			row-gap: rem(10);
+		}
+
+		@include mobile {
+			grid-area: initial;
+			display: contents;
+		}
+	}
+
+	&__subtitle {
+		justify-self: start;
+
+		@include mobile {
+			grid-area: subtitle;
+		}
+	}
+
+	&__title {
+		@include mobile {
+			grid-area: title;
+			margin-top: rem(16);
+		}
+	}
+
+	&__description {
+		grid-area: description;
+	}
+
+	&__list {
+		display: grid;
+		column-gap: rem(20);
+		padding: rem(20);
+		border: var(--border);
+		border-radius: rem(12);
+		background-color: var(--color-dark-8);
+
+		@include mobile-above {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include laptop {
+			column-gap: rem(10);
+			padding: rem(10);
+			border-radius: rem(10);
+		}
+
+		@include mobile {
+			gap: rem(10) 0;
+		}
+	}
+}
