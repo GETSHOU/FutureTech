@@ -1,0 +1,16 @@
+@use '../helpers/' as *;
+
+.testimonial {
+	display: flex;
+	flex-direction: column;
+	row-gap: fluid(60, 50);
+
+	&__person {
+		justify-content: center;
+	}
+
+	&__body {
+		color: var(--color-absolute-white);
+		text-align: center;
+	}
+}

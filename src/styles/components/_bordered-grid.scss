@@ -1,0 +1,62 @@
+@use '../helpers/' as *;
+
+.bordered-grid {
+	display: flex;
+	flex-direction: column;
+
+	&__row {
+		border-bottom: var(--border);
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		@include tablet {
+			border-bottom: none;
+		}
+
+		&-list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+
+			@include tablet {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		&-item {
+			padding: fluid(80, 60) rem(50);
+			border-right: var(--border);
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				border-right: none;
+			}
+
+			@include laptop {
+				padding: rem(60) rem(40);
+			}
+
+			@include tablet {
+				padding-block: rem(40);
+				padding-inline: 0;
+				border-right: none;
+				border-bottom: var(--border);
+			}
+		}
+
+		&:last-child {
+			.bordered-grid__row-item {
+				&:last-child {
+					@include tablet {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}

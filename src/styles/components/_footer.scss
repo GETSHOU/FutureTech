@@ -1,6 +1,7 @@
 @use '../helpers' as *;
 
 .footer {
+	flex: 0 0 auto;
 	color: var(--color-dark-40);
 
 	&__body {

@@ -5,13 +5,21 @@
 
 	display: flex;
 	align-items: center;
-	column-gap: fluid(16, 8);
+	column-gap: fluid(14, 10);
 
-	&__image {
+	&__avatar {
 		width: var(--imageSize);
+
+		&--small {
+			--imageSize: #{rem(60)};
+		}
 
 		@include laptop {
 			--imageSize: #{rem(60)};
+
+			&--small {
+				--imageSize: #{rem(50)};
+			}
 		}
 	}
 
@@ -29,7 +37,9 @@
 		}
 	}
 
-	&__departament {
+	&__meta {
+		color: var(--color-dark-40);
+
 		@include fluid-text(18, 14);
 	}
 }

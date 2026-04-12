@@ -434,20 +434,20 @@
 							<ul class="list">
 								<li class="list__item">
 									<article class="blog-card container">
-										<div class="blog-card__author person-card">
+										<figure class="blog-card__author person-card">
 											<img
 												src="./src/images/blog-card/blog-card__person-1.png"
 												alt=""
-												class="person-card__image"
+												class="person-card__avatar"
 												width="80"
 												height="80"
 												loading="lazy"
 											/>
-											<div class="person-card__body">
+											<figcaption class="person-card__info">
 												<p class="person-card__name">John Techson</p>
-												<p class="person-card__departament">Quantum Computing</p>
-											</div>
-										</div>
+												<p class="person-card__meta">Quantum Computing</p>
+											</figcaption>
+										</figure>
 										<div class="blog-card__body">
 											<time datetime="2023-10-15" class="blog-card__date"
 												>October 15, 2023</time
@@ -553,20 +553,20 @@
 								</li>
 								<li class="list__item">
 									<article class="blog-card container">
-										<div class="blog-card__author person-card">
+										<figure class="blog-card__author person-card">
 											<img
 												src="./src/images/blog-card/blog-card__person-2.png"
 												alt=""
-												class="person-card__image"
+												class="person-card__avatar"
 												width="80"
 												height="80"
 												loading="lazy"
 											/>
-											<div class="person-card__body">
+											<figcaption class="person-card__info">
 												<p class="person-card__name">Sarah Ethicist</p>
-												<p class="person-card__departament">AI Ethicsg</p>
-											</div>
-										</div>
+												<p class="person-card__meta">AI Ethicsg</p>
+											</figcaption>
+										</figure>
 										<div class="blog-card__body">
 											<time datetime="2023-11-05" class="blog-card__date"
 												>November 5, 2023</time
@@ -672,20 +672,20 @@
 								</li>
 								<li class="list__item">
 									<article class="blog-card container">
-										<div class="blog-card__author person-card">
+										<figure class="blog-card__author person-card">
 											<img
 												src="./src/images/blog-card/blog-card__person-3.png"
 												alt=""
-												class="person-card__image"
+												class="person-card__avatar"
 												width="80"
 												height="80"
 												loading="lazy"
 											/>
-											<div class="person-card__body">
+											<figcaption class="person-card__info">
 												<p class="person-card__name">Astronomer X</p>
-												<p class="person-card__departament">Space Exploration</p>
-											</div>
-										</div>
+												<p class="person-card__meta">Space Exploration</p>
+											</figcaption>
+										</figure>
 										<div class="blog-card__body">
 											<time datetime="2023-12-10" class="blog-card__date"
 												>December 10, 2023</time
@@ -890,12 +890,12 @@
 										>
 									</div>
 									<div class="card__preview-extra">
-										<div class="social-proof tile tile--small">
-											<div class="social-proof__body">
-												<p class="social-proof__stats">Downloaded By</p>
-												<p class="social-proof__metrics h5">10k + Users</p>
+										<div class="soc1al-proof tile tile--small">
+											<div class="soc1al-proof__body">
+												<p class="soc1al-proof__stats">Downloaded By</p>
+												<p class="soc1al-proof__metrics h5">10k + Users</p>
 											</div>
-											<div class="social-proof__team team">
+											<div class="soc1al-proof__team team">
 												<img
 													class="team__person"
 													src="./src/images/team/team__person-1.png"
@@ -1099,6 +1099,239 @@
 							</div>
 						</li>
 					</ul>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="testimonials-title">
+				<header class="section__header">
+					<div class="section__header-inner container">
+						<div class="section__header-info">
+							<p class="section__subtitle eyebrow">What Our Readers Say</p>
+							<h2 class="section__title" id="testimonials-title">
+								Real Words from Real Readers
+							</h2>
+						</div>
+						<div class="section__header-actions">
+							<a class="section__header-link button" href="."
+								><span class="icon-text icon-text--arrow-yellow"
+									>View All Testimonials</span
+								></a
+							>
+						</div>
+					</div>
+				</header>
+				<div class="section__body bordered-grid">
+					<div class="bordered-grid__row">
+						<ul class="bordered-grid__row-list container">
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Sarah Thompson</p>
+											<p class="person-card__meta">Space Exploration</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The ebooks on AI in education have been a game-changer for my
+												research. They provide in-depth insights and case studies that are
+												invaluable for staying updated.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Raj Patel</p>
+											<p class="person-card__meta">Mumbai, India</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The whitepapers on renewable energy strategies have greatly
+												influenced my work. They offer detailed data and analysis, helping
+												me make informed decisions.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Emily Adams</p>
+											<p class="person-card__meta">London, UK</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The AI in healthcare reports have been an essential resource for
+												our hospital. They highlight the latest innovations and best
+												practices, improving patient care.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+						</ul>
+					</div>
+					<div class="bordered-grid__row">
+						<ul class="bordered-grid__row-list container">
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Alan Jackson</p>
+											<p class="person-card__meta">Houston, USA</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The reports on space mining prospects have fueled my passion for
+												space exploration. They provide a comprehensive view of what lies
+												beyond Earth.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Jessica Miller</p>
+											<p class="person-card__meta">Boston, USA</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The research papers on genomic breakthroughs have been a goldmine
+												of information. They've shaped the direction of my research in
+												genomics.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+							<li class="bordered-grid__row-item">
+								<article class="testimonial">
+									<figure class="testimonial__person person-card">
+										<img
+											src="./src/images/blog-card/blog-card__person-1.png"
+											alt=""
+											class="person-card__avatar person-card__avatar--small"
+											width="60"
+											height="60"
+											loading="lazy"
+										/>
+										<figcaption class="person-card__info">
+											<p class="person-card__name">Diego Lopez</p>
+											<p class="person-card__meta">Barcelona, Spain</p>
+										</figcaption>
+									</figure>
+									<div class="rating" title="Rating 5 star" aria-label="Rating 5 star">
+										<div class="rating__body">
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+											<span class="rating__icon is-active"></span>
+										</div>
+										<blockquote class="testimonial__body tile tile--small tile--extra">
+											<p>
+												The ebooks on renewable energy strategies have given me the
+												insights I needed to pivot our startup toward sustainability.
+											</p>
+										</blockquote>
+									</div>
+								</article>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</main>

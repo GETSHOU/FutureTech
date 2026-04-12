@@ -12,6 +12,10 @@
 		--tilePadding: #{fluid(30, 20)};
 	}
 
+	&--extra {
+		padding-top: fluid(50, 30);
+	}
+
 	@include laptop {
 		border-radius: rem(10);
 	}
