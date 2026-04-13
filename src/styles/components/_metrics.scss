@@ -38,6 +38,10 @@
 		}
 	}
 
+	&__key {
+		@include fluid-text(18, 14);
+	}
+
 	&__value {
 		@include fluid-text(40, 24);
 

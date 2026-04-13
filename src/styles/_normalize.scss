@@ -1,12 +1,14 @@
 /**
-  Нормализация блочной модели
- */
-
+	Убираем отступы у всех элементов
+*/
 * {
 	margin: 0;
 	padding: 0;
 }
 
+/**
+  Нормализация блочной модели
+ */
 *,
 ::before,
 ::after {
@@ -26,7 +28,7 @@
   у которых есть атрибут class
  */
 body,
-:where(blockquote, figure, fieldset):where([class]) {
+:where(blockquote, figure):where([class]) {
 	margin: 0;
 }
 
@@ -42,10 +44,11 @@ body,
 	margin-left: 0;
 }
 
-// :where(fieldset[class]) {
-// 	padding: 0;
-// 	border: none;
-// }
+:where(fieldset[class]) {
+	margin-left: 0;
+	padding: 0;
+	border: none;
+}
 
 /**
   Убираем стандартный маркер маркированному списку,
@@ -58,6 +61,25 @@ body,
 :where(address[class]) {
 	font-style: normal;
 }
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+	--paragraphMarginBottom: 24px;
+
+	margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+// p:where(:not([class]):not(:last-child)) {
+// 	margin-bottom: var(--paragraphMarginBottom);
+// }
 
 /**
   Упрощаем работу с изображениями и видео
@@ -84,7 +106,6 @@ html {
     Пригодится в большинстве ситуаций
     (когда, например, нужно будет "прижать" футер к низу сайта)
    */
-
 	height: 100%;
 
 	/**
@@ -92,10 +113,13 @@ html {
     при появлении / исчезновении скроллбара
    */
 	scrollbar-gutter: stable;
+}
 
-	/**
-    Плавный скролл
-   */
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
 	scroll-behavior: smooth;
 }
 
@@ -104,7 +128,7 @@ body {
     Пригодится в большинстве ситуаций
     (когда, например, нужно будет "прижать" футер к низу сайта)
    */
-	height: 100%;
+	min-height: 100%;
 
 	/**
     Унифицированный интерлиньяж
@@ -128,27 +152,13 @@ label {
 }
 
 /**
-  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
- */
-button {
-	-webkit-tap-highlight-color: transparent;
-}
-
-/**
   Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not([fill='none'], [fill^='url'])) {
+[fill] {
 	fill: currentColor;
 }
 
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут stroke со значением 'none')
- */
-:where([stroke]:not([stroke='none'], [stroke^='url'])) {
+[stroke] {
 	stroke: currentColor;
 }
 
@@ -157,14 +167,6 @@ button {
  */
 svg * {
 	transition-property: fill, stroke;
-}
-
-/**
-  Приведение рамок таблиц в классический 'collapse' вид
- */
-:where(table) {
-	border-collapse: collapse;
-	border-color: currentColor;
 }
 
 /**

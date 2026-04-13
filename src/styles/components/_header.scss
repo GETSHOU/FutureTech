@@ -1,13 +1,27 @@
 @use '../helpers/' as *;
 
 .header {
-	flex-grow: 0;
+	position: sticky;
 	display: flex;
 	flex-direction: column;
+	flex: 0 0 auto;
+	top: 0;
+	z-index: 999;
+	animation-name: scrolling-header;
+	animation-fill-mode: both;
+	animation-timeline: scroll();
+	animation-range: rem(100) rem(200);
+
+	@keyframes scrolling-header {
+		100% {
+			border-bottom: 1px solid var(--color-accent);
+		}
+	}
 
 	&__promo {
 		padding-block: rem(20);
 		border-bottom: rem(1) solid var(--color-dark-15);
+		background-color: var(--color-dark-8);
 
 		@include laptop {
 			padding-block: rem(12);
@@ -61,9 +75,9 @@
 			transition-duration: var(--transition-duration);
 
 			&:not(.is-active) {
-				@include hide;
-
 				translate: 100%;
+
+				@include hide;
 			}
 		}
 	}
