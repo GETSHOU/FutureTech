@@ -1,0 +1,26 @@
+@use '../helpers/' as *;
+
+.meta {
+	&__list {
+		display: flex;
+		column-gap: fluid(50, 20);
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(4);
+
+		@include laptop {
+			row-gap: rem(2);
+		}
+	}
+
+	&__key {
+		align-self: stretch;
+	}
+
+	&__value {
+		color: var(--color-absolute-white);
+	}
+}

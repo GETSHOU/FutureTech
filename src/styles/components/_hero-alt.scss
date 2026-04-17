@@ -1,0 +1,42 @@
+@use '../helpers/' as *;
+
+.hero-alt {
+	display: flex;
+	flex-direction: column;
+
+	&__header {
+		padding-top: fluid(130, 30);
+		padding-bottom: fluid(150, 40);
+		border-bottom: var(--border);
+	}
+
+	&__header-inner {
+		display: grid;
+		align-items: center;
+		gap: rem(20) rem(80);
+
+		@include mobile-above {
+			grid-template-columns: auto 1fr;
+		}
+
+		@include laptop {
+			column-gap: rem(60);
+		}
+
+		@include mobile {
+			row-gap: rem(14);
+		}
+	}
+
+	&__title {
+		@include mobile-above {
+			grid-column: 1 / -1;
+		}
+
+		&-part-mobile {
+			@include mobile-above {
+				@include visually-hidden;
+			}
+		}
+	}
+}
