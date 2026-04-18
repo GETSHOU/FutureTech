@@ -3,14 +3,25 @@
 .testimonial {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	row-gap: fluid(60, 50);
+
+	@include tablet {
+		max-width: rem(500);
+		margin-inline: auto;
+	}
 
 	&__person {
 		justify-content: center;
 	}
 
 	&__body {
+		height: 100%;
 		color: var(--color-absolute-white);
 		text-align: center;
+	}
+
+	&__rating {
+		height: 100%;
 	}
 }

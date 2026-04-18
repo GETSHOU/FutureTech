@@ -1,31 +1,87 @@
 @use '../helpers/' as *;
 
 .bordered-grid {
+	--columns: 1;
+	--itemPaddingY: #{fluid(80, 40)};
+	--itemPaddingX: 0;
+
 	display: flex;
 	flex-direction: column;
 
 	&__row {
-		border-bottom: var(--border);
-
-		&:last-child {
-			border-bottom: none;
+		&:not(:last-child) {
+			border-bottom: var(--border);
 		}
 
-		@include tablet {
-			border-bottom: none;
+		&:has(.bordered-grid__row-list--cols-2) {
+			@include mobile {
+				border-bottom: none;
+
+				&:last-child {
+					.bordered-grid__row-item:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+
+		&:has(.bordered-grid__row-list--cols-3) {
+			@include tablet {
+				border-bottom: none;
+
+				&:last-child {
+					.bordered-grid__row-item:last-child {
+						border-bottom: none;
+					}
+				}
+			}
 		}
 
 		&-list {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(var(--columns), 1fr);
 
-			@include tablet {
-				grid-template-columns: 1fr;
+			&--cols-2 {
+				--columns: 2;
+				--itemPaddingX: #{rem(80)};
+
+				@include laptop {
+					--itemPaddingX: #{rem(50)};
+				}
+
+				@include mobile {
+					--columns: 1;
+					--itemPaddingX: 0;
+
+					.bordered-grid__row-item {
+						border-right: none;
+						border-bottom: var(--border);
+					}
+				}
+			}
+
+			&--cols-3 {
+				--columns: 3;
+				--itemPaddingX: #{rem(50)};
+
+				@include laptop {
+					--itemPaddingX: #{rem(40)};
+				}
+
+				@include tablet {
+					--columns: 1;
+					--itemPaddingX: 0;
+
+					.bordered-grid__row-item {
+						border-right: none;
+						border-bottom: var(--border);
+					}
+				}
 			}
 		}
 
 		&-item {
-			padding: fluid(80, 60) rem(50);
+			padding: var(--itemPaddingY) var(--itemPaddingX);
 			border-right: var(--border);
 
 			&:first-child {
@@ -35,27 +91,6 @@
 			&:last-child {
 				padding-right: 0;
 				border-right: none;
-			}
-
-			@include laptop {
-				padding: rem(60) rem(40);
-			}
-
-			@include tablet {
-				padding-block: rem(40);
-				padding-inline: 0;
-				border-right: none;
-				border-bottom: var(--border);
-			}
-		}
-
-		&:last-child {
-			.bordered-grid__row-item {
-				&:last-child {
-					@include tablet {
-						border-bottom: none;
-					}
-				}
 			}
 		}
 	}

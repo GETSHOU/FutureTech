@@ -8,13 +8,19 @@ export default {
 		'color-hex-length': 'long',
 		'max-nesting-depth': 5,
 		'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
+		'alpha-value-notation': 'number',
 		'property-no-deprecated': [true, { ignoreProperties: ['clip', '/^grid-/'] }],
 		'selector-class-pattern':
 			'^[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$',
 		'custom-property-pattern': null,
 		'color-function-notation': 'legacy',
 		'font-family-name-quotes': 'always-unless-keyword',
-		'selector-max-specificity': '0,5,0',
+		'selector-max-specificity': [
+			'0,5,0',
+			{
+				ignoreSelectors: [':last-child', ':first-child'],
+			},
+		],
 		'selector-no-vendor-prefix': true,
 		'keyframe-selector-notation': 'percentage',
 		'selector-no-qualifying-type': [true, { ignore: ['class', 'attribute'] }],
