@@ -1,0 +1,18 @@
+@use '../helpers/' as *;
+
+.table-of-contents {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		list-style: initial;
+	}
+
+	&__item {
+		list-style-type: disc;
+		margin-left: 1.5em;
+
+		&:not(:last-child) {
+			margin-bottom: fluid(20, 16);
+		}
+	}
+}

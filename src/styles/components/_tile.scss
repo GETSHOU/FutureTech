@@ -12,8 +12,20 @@
 		--tilePadding: #{fluid(30, 20)};
 	}
 
+	&--extra-small {
+		--tilePadding: #{rem(20)};
+
+		@include laptop {
+			--tilePadding: #{rem(18)};
+		}
+	}
+
 	&--extra {
 		padding-top: fluid(50, 30);
+	}
+
+	&--no-border {
+		border: none;
 	}
 
 	@include laptop {

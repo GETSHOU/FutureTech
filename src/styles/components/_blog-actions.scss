@@ -9,6 +9,10 @@
 		@include laptop {
 			column-gap: rem(8);
 		}
+
+		@include mobile {
+			justify-content: center;
+		}
 	}
 
 	&__button {
@@ -32,21 +36,6 @@
 			svg * {
 				fill: var(--color-red);
 				stroke: var(--color-red);
-			}
-		}
-
-		span:not([class]),
-		svg {
-			transition-duration: var(--transition-duration);
-		}
-
-		@include hover {
-			span:not([class]) {
-				color: var(--color-accent);
-			}
-
-			svg {
-				color: var(--color-accent);
 			}
 		}
 	}

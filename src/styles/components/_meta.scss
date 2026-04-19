@@ -4,6 +4,22 @@
 	&__list {
 		display: flex;
 		column-gap: fluid(50, 20);
+
+		&--cols-2 {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: fluid(30, 20) 1rem;
+
+			@include tablet {
+				grid-template-columns: auto 1fr;
+				column-gap: rem(50);
+			}
+
+			@include mobile {
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 1rem;
+			}
+		}
 	}
 
 	&__item {
@@ -13,6 +29,12 @@
 
 		@include laptop {
 			row-gap: rem(2);
+		}
+
+		&--wide {
+			grid-column: 1 / -1;
+			row-gap: fluid(16, 10);
+			margin-top: fluid(20, 10);
 		}
 	}
 
