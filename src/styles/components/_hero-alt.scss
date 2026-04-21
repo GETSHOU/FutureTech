@@ -3,6 +3,7 @@
 .hero-alt {
 	display: flex;
 	flex-direction: column;
+	border-bottom: var(--border);
 
 	&__header {
 		padding-top: fluid(130, 30);

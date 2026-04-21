@@ -82,9 +82,28 @@
 		left: $left;
 		right: $right;
 		#{$property}: 0;
-		translate: $translate;
+		translate: $translate 50%;
 		width: var(--100vw);
 		height: rem(1);
-		background-color: var(--color-dark-15);
+		background-color: var(--borderColor);
+	}
+}
+
+@mixin column-divider($itemPaddingX: 0) {
+	// @param: $itemPaddingX - отступы column-gap между колонками. Для блоков, которые не используют боковые отступы padding
+	// @var:   --columnDividerDisplay - управление видимостью разделителя column-divider. Задаем значение для этой переменной снаружи!
+
+	position: relative;
+
+	&::after {
+		position: absolute;
+		display: var(--columnDividerDisplay, block);
+		content: '';
+		width: rem(1);
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		right: calc(($itemPaddingX + var(--borderWidthInitial)) * -1);
+		background-color: var(--borderColor);
 	}
 }

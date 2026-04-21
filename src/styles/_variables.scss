@@ -30,7 +30,9 @@
 
 	--transition-duration: 0.2s;
 
-	--border: #{rem(1)} solid var(--color-dark-15);
+	--borderWidthInitial: #{rem(1)};
+	--borderColor: var(--color-dark-15);
+	--border: var(--borderWidthInitial) solid var(--borderColor);
 
 	/* Переменная --scrollbar-width прописана в файле defineScrollBarWidthCSSVar.js */
 	--100vw: calc(100vw - var(--scrollbar-width));

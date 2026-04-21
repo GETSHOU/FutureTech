@@ -1,12 +1,15 @@
 @use '../helpers/' as *;
 
 .meta {
+	display: flex;
+
 	&__list {
-		display: flex;
-		column-gap: fluid(50, 20);
+		&--cols-2,
+		&--cols-3 {
+			display: grid;
+		}
 
 		&--cols-2 {
-			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: fluid(30, 20) 1rem;
 
@@ -19,6 +22,12 @@
 				grid-template-columns: repeat(2, 1fr);
 				column-gap: 1rem;
 			}
+		}
+
+		&--cols-3 {
+			justify-self: start;
+			grid-template-columns: repeat(3, auto);
+			column-gap: fluid(50, 20);
 		}
 	}
 

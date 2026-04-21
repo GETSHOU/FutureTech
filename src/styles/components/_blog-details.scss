@@ -119,10 +119,10 @@
 	}
 
 	&__meta {
-		padding: rem(80);
+		padding: rem(80) 0 rem(80) rem(80);
 
 		@include laptop {
-			padding: rem(60);
+			padding: rem(60) 0 rem(60) rem(60);
 		}
 
 		@include tablet {
