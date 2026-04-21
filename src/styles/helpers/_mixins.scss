@@ -78,6 +78,7 @@
 
 	&::before {
 		content: '';
+		display: var(--full-vw-centered-line-display, initial);
 		position: absolute;
 		left: $left;
 		right: $right;

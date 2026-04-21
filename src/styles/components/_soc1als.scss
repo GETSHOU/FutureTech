@@ -4,14 +4,55 @@
 	display: flex;
 	align-items: center;
 
+	&:has(.soc1als__item--tile) {
+		width: 100%;
+	}
+
 	&__list {
-		display: inline-flex;
+		display: flex;
+		width: 100%;
+		justify-content: start;
 		column-gap: fluid(20, 14);
+
+		&:has(.soc1als__item--tile) {
+			column-gap: rem(20);
+
+			@include laptop {
+				column-gap: rem(10);
+			}
+		}
 	}
 
 	&__item {
 		display: flex;
 		align-items: center;
+
+		&--tile {
+			flex: 1 1 rem(85);
+			max-width: rem(85);
+			min-width: rem(60);
+			border: var(--border);
+			border-radius: rem(6);
+			background-color: var(--color-dark-10);
+			transition-duration: var(--transition-duration);
+
+			@include hover {
+				border-color: var(--color-accent);
+			}
+
+			.soc1als__link {
+				flex: 0 1 rem(85);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-width: rem(65);
+				height: rem(60);
+
+				@include laptop {
+					height: rem(48);
+				}
+			}
+		}
 	}
 
 	&__link {

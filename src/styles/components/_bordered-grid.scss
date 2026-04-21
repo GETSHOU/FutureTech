@@ -3,13 +3,15 @@
 .bordered-grid {
 	--columns: 1;
 	--itemPaddingX: 0;
+	--itemPaddingY: #{fluid(80, 40)};
 
 	display: grid;
 	grid-template-columns: repeat(var(--columns), 1fr);
 	column-gap: 0;
 
 	&--cols-2,
-	&--cols-3 {
+	&--cols-3,
+	&--cols-4 {
 		column-gap: calc(var(--itemPaddingX) * 2 + var(--borderWidthInitial));
 	}
 
@@ -92,9 +94,66 @@
 		}
 	}
 
-	&__item {
-		--itemPaddingY: #{fluid(80, 40)};
+	&--cols-4 {
+		--columns: 4;
+		--itemPaddingX: #{rem(50)};
+		--itemPaddingY: #{fluid(80, 20)};
 
+		.bordered-grid__item {
+			&:last-child {
+				--columnDividerDisplay: none;
+			}
+		}
+
+		@include laptop {
+			--itemPaddingX: #{rem(30)};
+		}
+
+		@include tablet {
+			--columns: 2;
+
+			.bordered-grid__item {
+				&:nth-child(even) {
+					@include full-vw-centered-line(
+						bottom,
+						auto,
+						calc(100% + var(--itemPaddingX)),
+						50%
+					);
+				}
+			}
+
+			.bordered-grid__item {
+				&:nth-child(even) {
+					--columnDividerDisplay: none;
+				}
+			}
+		}
+
+		@include mobile-above {
+			.bordered-grid__item {
+				@include column-divider(var(--itemPaddingX));
+			}
+		}
+
+		@include mobile {
+			--columns: inherit;
+
+			column-gap: inherit;
+
+			.bordered-grid__item {
+				&:not(:last-child) {
+					border-bottom: var(--border);
+				}
+
+				&:nth-child(even) {
+					--full-vw-centered-line-display: none;
+				}
+			}
+		}
+	}
+
+	&__item {
 		padding-block: var(--itemPaddingY);
 	}
 }

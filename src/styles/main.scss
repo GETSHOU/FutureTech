@@ -1,8 +1,11 @@
+// main
 @use 'normalize';
 @use 'fonts';
 @use 'variables';
 @use 'utils';
 @use 'globals';
+
+// components
 @use 'components/header';
 @use 'components/icon-text';
 @use 'components/logo';
@@ -42,3 +45,4 @@
 @use 'components/table-of-contents';
 @use 'components/expandable-content';
 @use 'components/reports-card';
+@use 'components/contacts-card';
