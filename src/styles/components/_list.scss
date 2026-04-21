@@ -6,4 +6,9 @@
 			border-bottom: var(--border);
 		}
 	}
+
+	// читается как "применить стили к элементу .list, если он не единственный у родителя"
+	&:not(:only-child) {
+		border-bottom: var(--border);
+	}
 }

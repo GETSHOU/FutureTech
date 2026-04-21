@@ -80,9 +80,6 @@
 		display: grid;
 		column-gap: rem(20);
 		padding: rem(20);
-		border: var(--border);
-		border-radius: rem(12);
-		background-color: var(--color-dark-8);
 
 		@include mobile-above {
 			grid-template-columns: repeat(3, 1fr);
@@ -91,7 +88,6 @@
 		@include laptop {
 			column-gap: rem(10);
 			padding: rem(10);
-			border-radius: rem(10);
 		}
 
 		@include mobile {

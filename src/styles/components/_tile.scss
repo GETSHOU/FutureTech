@@ -8,11 +8,15 @@
 	border-radius: rem(12);
 	background-color: var(--color-dark-10);
 
-	&--small {
+	@include laptop {
+		border-radius: rem(10);
+	}
+
+	&--middle {
 		--tilePadding: #{fluid(30, 20)};
 	}
 
-	&--extra-small {
+	&--small {
 		--tilePadding: #{rem(20)};
 
 		@include laptop {
@@ -28,7 +32,11 @@
 		border: none;
 	}
 
-	@include laptop {
-		border-radius: rem(10);
+	&--dark {
+		background-color: var(--color-dark-8);
+	}
+
+	&--no-padding {
+		padding: 0;
 	}
 }

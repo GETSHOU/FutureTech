@@ -22,6 +22,27 @@
 		@include tablet {
 			width: max-content;
 		}
+
+		&--compact {
+			grid-template-columns: initial;
+			display: flex;
+			width: 100%;
+			column-gap: rem(10);
+			padding: rem(10);
+
+			.tabs__button {
+				padding: rem(18) rem(38);
+
+				@include laptop {
+					padding: rem(14) rem(24);
+				}
+
+				@include mobile {
+					width: 100%;
+					padding: rem(14) rem(13);
+				}
+			}
+		}
 	}
 
 	&__button {
@@ -30,7 +51,7 @@
 		color: var(--color-gray-60);
 		border: var(--border);
 		border-radius: rem(8);
-		background-color: transparent;
+		background-color: var(--color-dark-8);
 
 		&.is-active {
 			color: var(--color-absolute-white);
