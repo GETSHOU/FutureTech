@@ -1,0 +1,67 @@
+@use '../helpers/' as *;
+
+.field {
+	&__control {
+		width: 100%;
+		color: var(--color-absolute-white);
+		letter-spacing: 0;
+		padding: rem(20);
+		border: var(--border);
+		border-radius: rem(10);
+		background-color: var(--color-dark-10);
+
+		// фон input после автозаполнения
+		&:-webkit-autofill,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:hover {
+			box-shadow: inset 0 0 0 1000px rgba(255, 209, 26, 0.7) !important;
+			-webkit-box-shadow: inset 0 0 0 1000px rgba(255, 209, 26, 0.7) !important;
+			-webkit-text-fill-color: var(--color-dark-8) !important;
+			font-weight: 500;
+		}
+
+		@include laptop {
+			padding: rem(16);
+		}
+
+		@include mobile {
+			padding: rem(15);
+		}
+
+		@include hover {
+			border-color: var(--color-accent);
+		}
+
+		&--textarea {
+			min-height: rem(163);
+			resize: vertical;
+			field-sizing: content;
+
+			@include mobile-s {
+				min-height: rem(127);
+			}
+		}
+
+		&:user-invalid {
+			border-color: var(--color-red);
+			animation: shake 0.2s ease-in-out 0s 2;
+		}
+	}
+
+	&__label {
+		align-self: start;
+		font-weight: 500;
+		letter-spacing: 0;
+		color: var(--color-absolute-white);
+
+		@include laptop {
+			font-size: rem(16);
+		}
+	}
+
+	&__required-marker,
+	&__error {
+		// TODO: Реализовать error через валидацию в js
+		color: var(--color-red);
+	}
+}

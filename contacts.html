@@ -34,7 +34,7 @@
 						/>
 					</a>
 					<div class="header__overlay" data-js-header-overlay>
-						<nav class="header__menu" aria-label="Header navigation">
+						<nav class="header__menu" aria-label="Header">
 							<ul class="header__menu-list">
 								<li class="header__menu-item">
 									<a class="header__menu-link" href="/">Home</a>
@@ -216,6 +216,7 @@
 						</li>
 					</ul>
 				</header>
+
 				<div class="section__body">
 					<ul class="list">
 						<li class="list__item">
@@ -235,7 +236,195 @@
 										</div>
 									</div>
 								</div>
-								<div class="card__body">fields</div>
+								<div class="card__body">
+									<!-- TODO: Реализовать валидацию формы и запрос на сервер на js -->
+									<form action="/" class="form form--cols-2">
+										<div class="form__cell field">
+											<label class="field__label" for="firstName" aria-hidden="true"
+												>First name
+												<span class="field__required-marker" aria-hidden="true"
+													>*</span
+												></label
+											>
+											<input
+												type="text"
+												name="first_name"
+												class="field__control"
+												id="firstName"
+												placeholder="Enter First Name"
+												required
+												autocomplete="on"
+											/>
+										</div>
+										<div class="form__cell field">
+											<label class="field__label" for="lastName" aria-hidden="true"
+												>Last name</label
+											>
+											<input
+												type="text"
+												name="last_name"
+												class="field__control"
+												id="lastName"
+												placeholder="Enter Last Name"
+											/>
+										</div>
+										<div class="form__cell field">
+											<label class="field__label" for="email" aria-hidden="true"
+												>Email
+												<span class="field__required-marker" aria-hidden="true"
+													>*</span
+												></label
+											>
+											<input
+												type="email"
+												name="email"
+												class="field__control"
+												id="email"
+												placeholder="example@email.com"
+												required
+												autocomplete="on"
+											/>
+										</div>
+										<div class="form__cell field">
+											<label class="field__label" for="phoneNumber" aria-hidden="true"
+												>Phone number</label
+											>
+											<div class="form__cell-inner form__cell-inner-alt">
+												<div class="select" data-js-select>
+													<label
+														class="select__label visually-hidden"
+														id="phone-number-prefix-select-label"
+														for="phoneNumberPrefix"
+													>
+														Phone number prefix
+													</label>
+													<select
+														class="select__original-control field__control"
+														id="phoneNumberPrefix"
+														tabindex="-1"
+														data-js-select-original-control
+													>
+														<option value="+7" selected>+7</option>
+														<option value="+1">+1</option>
+														<option value="+2">+2</option>
+														<option value="+3">+3</option>
+													</select>
+													<div class="select__body">
+														<!-- На .select__button вешается класс .is-expanded для раскрытия -->
+														<div
+															class="select__button field__control"
+															tabindex="0"
+															role="combobox"
+															aria-expanded="false"
+															aria-haspopup="listbox"
+															aria-controls="phone-number-prefix-select-dropdown"
+															aria-labelledby="phone-number-prefix-select-label"
+															data-js-select-button
+														>
+															+7
+														</div>
+														<!-- На .select__dropdown вешается класс .is-expanded для раскрытия -->
+														<div
+															class="select__dropdown is-on-the-top-side"
+															id="phone-number-prefix-select-dropdown"
+															role="listbox"
+															aria-labelledby="phone-number-prefix-select-label"
+															data-js-select-dropdown
+														>
+															<div
+																class="select__option is-selected is-current"
+																id="phone-number-prefix-select-option-1"
+																role="option"
+																aria-selected="true"
+																data-js-select-option
+															>
+																+7
+															</div>
+															<div
+																class="select__option"
+																id="phone-number-prefix-select-option-2"
+																role="option"
+																aria-selected="false"
+																data-js-select-option
+															>
+																+1
+															</div>
+															<div
+																class="select__option"
+																id="phone-number-prefix-select-option-3"
+																role="option"
+																aria-selected="false"
+																data-js-select-option
+															>
+																+2
+															</div>
+															<div
+																class="select__option"
+																id="phone-number-prefix-select-option-4"
+																role="option"
+																aria-selected="false"
+																data-js-select-option
+															>
+																+3
+															</div>
+														</div>
+													</div>
+												</div>
+												<input
+													type="text"
+													name="phone"
+													class="field__control"
+													id="phoneNumber"
+													placeholder="(999) 999-99-99"
+													autocomplete="on"
+													data-js-input-mask="(000) 000-00-00"
+												/>
+											</div>
+										</div>
+										<div class="form__cell form__cell--wide field">
+											<label class="field__label" for="message" aria-hidden="true"
+												>Message
+												<span class="field__required-marker" aria-hidden="true"
+													>*</span
+												></label
+											>
+											<textarea
+												type="text"
+												name="message"
+												class="field__control field__control--textarea"
+												id="message"
+												placeholder="Enter your Message"
+												required
+											></textarea>
+										</div>
+										<div class="form__cell form__cell--wide field">
+											<div class="form__actions">
+												<div class="form__cell-inner">
+													<label class="checkbox">
+														<div class="checkbox__inner">
+															<input
+																type="checkbox"
+																name="agreement"
+																value="yes"
+																class="checkbox__field"
+																required
+															/>
+															<span class="field__required-marker" aria-hidden="true">
+																*</span
+															>
+														</div>
+														<span class="checkbox__label"
+															>I agree with Terms of Use and Privacy Policy</span
+														>
+													</label>
+												</div>
+												<button type="submit" class="form__button button button--accent">
+													Send
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
 							</div>
 						</li>
 						<li class="list__item">
@@ -266,7 +455,115 @@
 										>
 									</div>
 								</div>
-								<div class="card__body">accordions</div>
+								<div class="card__body">
+									<ul class="card__list">
+										<li class="card__list-item accordion tile tile--middle">
+											<details class="accordion__details" name="faq" open>
+												<summary class="accordion__summary">
+													<h3 class="accordion__title h6" aria-details="faq-1">
+														What is AI?
+													</h3>
+												</summary>
+											</details>
+											<div class="accordion__content" id="faq-1">
+												<div class="accordion__content-body">
+													<div class="accordion__content-description">
+														<p>
+															AI stands for Artificial Intelligence, which refers to the
+															simulation of human intelligence in machines. It enables
+															them to perform tasks like problem-solving, learning, and
+															decision-making.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="card__list-item accordion tile tile--middle">
+											<details class="accordion__details" name="faq">
+												<summary class="accordion__summary">
+													<h3 class="accordion__title h6" aria-details="faq-2">
+														How can I listen to your podcasts?
+													</h3>
+												</summary>
+											</details>
+											<div class="accordion__content" id="faq-2">
+												<div class="accordion__content-body">
+													<div class="accordion__content-description">
+														<p>
+															AI stands for Artificial Intelligence, which refers to the
+															simulation of human intelligence in machines. It enables
+															them to perform tasks like problem-solving, learning, and
+															decision-making.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="card__list-item accordion tile tile--middle">
+											<details class="accordion__details" name="faq">
+												<summary class="accordion__summary">
+													<h3 class="accordion__title h6" aria-details="faq-3">
+														Are your podcasts free to listen to?
+													</h3>
+												</summary>
+											</details>
+											<div class="accordion__content" id="faq-3">
+												<div class="accordion__content-body">
+													<div class="accordion__content-description">
+														<p>
+															AI stands for Artificial Intelligence, which refers to the
+															simulation of human intelligence in machines. It enables
+															them to perform tasks like problem-solving, learning, and
+															decision-making.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="card__list-item accordion tile tile--middle">
+											<details class="accordion__details" name="faq">
+												<summary class="accordion__summary">
+													<h3 class="accordion__title h6" aria-details="faq-4">
+														Can I download episodes to listen offline?
+													</h3>
+												</summary>
+											</details>
+											<div class="accordion__content" id="faq-4">
+												<div class="accordion__content-body">
+													<div class="accordion__content-description">
+														<p>
+															AI stands for Artificial Intelligence, which refers to the
+															simulation of human intelligence in machines. It enables
+															them to perform tasks like problem-solving, learning, and
+															decision-making.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="card__list-item accordion tile tile--middle">
+											<details class="accordion__details" name="faq">
+												<summary class="accordion__summary">
+													<h3 class="accordion__title h6" aria-details="faq-5">
+														How often do you release new episodes?
+													</h3>
+												</summary>
+											</details>
+											<div class="accordion__content" id="faq-5">
+												<div class="accordion__content-body">
+													<div class="accordion__content-description">
+														<p>
+															AI stands for Artificial Intelligence, which refers to the
+															simulation of human intelligence in machines. It enables
+															them to perform tasks like problem-solving, learning, and
+															decision-making.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -300,8 +597,8 @@
 					</header>
 					<div class="about__body tile tile--dark tile--no-padding">
 						<ul class="about__list">
-							<li class="about__item about-card tile tile--middle">
-								<a class="about-card__link" href=".">
+							<li class="about__item about-card">
+								<a class="about-card__link tile tile--middle" href=".">
 									<h3 class="about-card__title h6 circle-icon">Resource Access</h3>
 									<div class="about-card__description">
 										<p>
@@ -311,8 +608,8 @@
 									</div>
 								</a>
 							</li>
-							<li class="about__item about-card tile tile--middle">
-								<a class="about-card__link" href=".">
+							<li class="about__item about-card">
+								<a class="about-card__link tile tile--middle" href=".">
 									<h3 class="about-card__title h6 circle-icon">Community Forum</h3>
 									<div class="about-card__description">
 										<p>
@@ -322,8 +619,8 @@
 									</div>
 								</a>
 							</li>
-							<li class="about__item about-card tile tile--middle">
-								<a class="about-card__link" href=".">
+							<li class="about__item about-card">
+								<a class="about-card__link tile tile--middle" href=".">
 									<h3 class="about-card__title h6 circle-icon">Tech Events</h3>
 									<div class="about-card__description">
 										<p>
@@ -342,7 +639,7 @@
 		<footer class="footer">
 			<div class="footer__inner container">
 				<div class="footer__body">
-					<nav class="footer__nav" aria-label="Footer navigation">
+					<nav class="footer__nav" aria-label="Footer">
 						<div class="footer__nav-column">
 							<a href="/" class="footer__nav-main-link h6">Home</a>
 							<ul class="footer__nav-list">

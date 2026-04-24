@@ -34,6 +34,8 @@
 	--borderColor: var(--color-dark-15);
 	--border: var(--borderWidthInitial) solid var(--borderColor);
 
+	--selectFieldWidth: #{rem(100)};
+
 	/* Переменная --scrollbar-width прописана в файле defineScrollBarWidthCSSVar.js */
 	--100vw: calc(100vw - var(--scrollbar-width));
 

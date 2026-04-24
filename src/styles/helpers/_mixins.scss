@@ -108,3 +108,11 @@
 		background-color: var(--borderColor);
 	}
 }
+
+@mixin outline {
+	&:focus {
+		outline: 2px solid var(--color-accent);
+		outline-offset: rem(4);
+		transition: initial;
+	}
+}

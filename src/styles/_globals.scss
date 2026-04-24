@@ -44,9 +44,17 @@ a {
 }
 
 button,
-input {
+input,
+textarea {
 	border: none;
-	outline: none;
+}
+
+:focus-visible {
+	@include outline;
+}
+
+select:focus-visible {
+	@include outline;
 }
 
 a,

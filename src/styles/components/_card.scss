@@ -261,4 +261,10 @@
 			}
 		}
 	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(30, 20);
+	}
 }

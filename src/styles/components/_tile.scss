@@ -28,12 +28,12 @@
 		padding-top: fluid(50, 30);
 	}
 
-	&--no-border {
-		border: none;
-	}
-
 	&--dark {
 		background-color: var(--color-dark-8);
+	}
+
+	&--no-border {
+		border: none;
 	}
 
 	&--no-padding {

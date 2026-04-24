@@ -22,6 +22,7 @@ export default {
 			},
 		],
 		'selector-no-vendor-prefix': true,
+		'property-no-vendor-prefix': null,
 		'keyframe-selector-notation': 'percentage',
 		'selector-no-qualifying-type': [true, { ignore: ['class', 'attribute'] }],
 		'scss/dollar-variable-pattern': /[a-z][a-zA-Z]+/,

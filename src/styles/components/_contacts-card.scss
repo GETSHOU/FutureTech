@@ -12,6 +12,15 @@
 		line-height: 1.3;
 	}
 
+	&__address {
+		min-height: rem(57);
+
+		@include laptop {
+			min-height: rem(43);
+			font-size: rem(16);
+		}
+	}
+
 	&__actions {
 		display: flex;
 		flex-direction: column;

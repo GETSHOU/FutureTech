@@ -1,17 +1,15 @@
 @use '../helpers/' as *;
 
 .bordered-grid {
-	--columns: 1;
 	--itemPaddingX: 0;
 	--itemPaddingY: #{fluid(80, 40)};
 
 	display: grid;
-	grid-template-columns: repeat(var(--columns), 1fr);
-	column-gap: 0;
 
 	&--cols-2,
 	&--cols-3,
 	&--cols-4 {
+		grid-template-columns: repeat(var(--columns), 1fr);
 		column-gap: calc(var(--itemPaddingX) * 2 + var(--borderWidthInitial));
 	}
 
@@ -47,9 +45,9 @@
 		}
 
 		@include mobile {
-			--columns: inherit;
+			--columns: 1;
 
-			column-gap: inherit;
+			column-gap: 0;
 
 			.bordered-grid__item {
 				&:not(:last-child) {
@@ -82,9 +80,9 @@
 		}
 
 		@include tablet {
-			--columns: inherit;
+			--columns: 1;
 
-			column-gap: inherit;
+			column-gap: 0;
 
 			.bordered-grid__item {
 				&:not(:last-child) {
@@ -137,9 +135,9 @@
 		}
 
 		@include mobile {
-			--columns: inherit;
+			--columns: 1;
 
-			column-gap: inherit;
+			column-gap: 0;
 
 			.bordered-grid__item {
 				&:not(:last-child) {
